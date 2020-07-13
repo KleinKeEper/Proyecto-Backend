@@ -9,6 +9,7 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import pe.edu.upeu.movilidad.service.ConvocatoriaService;
 import pe.edu.upeu.movilidad.service.EscuelaService;
 import pe.edu.upeu.movilidad.service.UniversidadConvenioService;
 
@@ -23,10 +24,12 @@ public class GenerarVacantesController {
 	@Autowired
 	private UniversidadConvenioService universidadConvenioService;
 	
+	@Autowired
+	private ConvocatoriaService convocatoriaService;
+	
 	@GetMapping("/escuela/{id}")
 	public Map<String, Object> read(@PathVariable int id) {
 		
-		System.out.println(escuelaService.readId(id));
 		
 		return escuelaService.readId(id);
 	}
@@ -41,5 +44,9 @@ public class GenerarVacantesController {
 		return universidadConvenioService.readId(id);
 	}
 	
+	@GetMapping("/convocatoria")
+	public Map<String, Object> readConvocatoria() {
+		return convocatoriaService.readAll();
+	}
 	
 }
