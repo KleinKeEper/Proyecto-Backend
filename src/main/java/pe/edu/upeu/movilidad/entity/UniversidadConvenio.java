@@ -1,7 +1,7 @@
 package pe.edu.upeu.movilidad.entity;
 
 public class UniversidadConvenio {
-	private int d_universidad_convenio;
+	private int id_universidad_convenio;
 	private String nombre_universidad_convenio;
 	private String telefono;
 	private String contacto;
@@ -12,10 +12,10 @@ public class UniversidadConvenio {
 		// TODO Auto-generated constructor stub
 	}
 	
-	public UniversidadConvenio(int d_universidad_convenio, String nombre_universidad_convenio, String telefono,
+	public UniversidadConvenio(int id_universidad_convenio, String nombre_universidad_convenio, String telefono,
 			String contacto, String email, String pais) {
 		super();
-		this.d_universidad_convenio = d_universidad_convenio;
+		this.id_universidad_convenio = id_universidad_convenio;
 		this.nombre_universidad_convenio = nombre_universidad_convenio;
 		this.telefono = telefono;
 		this.contacto = contacto;
@@ -23,12 +23,12 @@ public class UniversidadConvenio {
 		this.pais = pais;
 	}
 
-	public int getD_universidad_convenio() {
-		return d_universidad_convenio;
+	public int getId_universidad_convenio() {
+		return id_universidad_convenio;
 	}
 
-	public void setD_universidad_convenio(int d_universidad_convenio) {
-		this.d_universidad_convenio = d_universidad_convenio;
+	public void setId_universidad_convenio(int d_universidad_convenio) {
+		this.id_universidad_convenio = d_universidad_convenio;
 	}
 
 	public String getNombre_universidad_convenio() {

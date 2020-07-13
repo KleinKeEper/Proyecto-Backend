@@ -83,6 +83,18 @@ public class Convocatoria {
 	public void setId_universidad_convenio(int id_universidad_convenio) {
 		this.id_universidad_convenio = id_universidad_convenio;
 	}
+
+
+
+	public String getNombre_convocatoria() {
+		return nombre_convocatoria;
+	}
+
+
+
+	public void setNombre_convocatoria(String nombre_convocatoria) {
+		this.nombre_convocatoria = nombre_convocatoria;
+	}
 	
 	
 	
