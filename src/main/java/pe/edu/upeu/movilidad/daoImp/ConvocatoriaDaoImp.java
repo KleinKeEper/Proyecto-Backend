@@ -31,7 +31,7 @@ public class ConvocatoriaDaoImp implements ConvocatoriaDao {
 									c.getNombre_convocatoria(),
 									c.getNro_vacantes(),
 									c.getRequisitos(),
-									c.getFecha_de_presentacion(),
+									c.getFecha_presentacion(),
 									c.getId_escuela(),
 									c.getId_universidad_convenio());
 	}

@@ -6,7 +6,7 @@ public class Convocatoria {
 	private String nombre_convocatoria;
 	private int nro_vacantes;
 	private String requisitos;
-	private String fecha_de_presentacion;
+	private String fecha_presentacion;
 	private String estado_evaluado;
 	private String universidad_anfitriona;
 	private int id_escuela;
@@ -19,14 +19,14 @@ public class Convocatoria {
 	
 	
 	public Convocatoria(int id_convocatoria, String nombre_convocatoria, int nro_vacantes, String requisitos,
-			String fecha_de_presentacion, String estado_evaluado, String universidad_anfitriona, int id_escuela,
+			String fecha_presentacion, String estado_evaluado, String universidad_anfitriona, int id_escuela,
 			int id_universidad_convenio) {
 		super();
 		this.id_convocatoria = id_convocatoria;
 		this.nombre_convocatoria = nombre_convocatoria;
 		this.nro_vacantes = nro_vacantes;
 		this.requisitos = requisitos;
-		this.fecha_de_presentacion = fecha_de_presentacion;
+		this.fecha_presentacion = fecha_presentacion;
 		this.estado_evaluado = estado_evaluado;
 		this.universidad_anfitriona = universidad_anfitriona;
 		this.id_escuela = id_escuela;
@@ -53,11 +53,11 @@ public class Convocatoria {
 	public void setRequisitos(String requisitos) {
 		this.requisitos = requisitos;
 	}
-	public String getFecha_de_presentacion() {
-		return fecha_de_presentacion;
+	public String getFecha_presentacion() {
+		return fecha_presentacion;
 	}
-	public void setFecha_de_presentacion(String fecha_de_presentacion) {
-		this.fecha_de_presentacion = fecha_de_presentacion;
+	public void setFecha_presentacion(String fecha_de_presentacion) {
+		this.fecha_presentacion = fecha_de_presentacion;
 	}
 	public String getEstado_evaluado() {
 		return estado_evaluado;
