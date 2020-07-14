@@ -4,6 +4,7 @@ import java.util.Map;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.CrossOrigin;
+import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -51,9 +52,30 @@ public class GenerarVacantesController {
 		return convocatoriaService.readAll();
 	}
 	
+	@GetMapping("/convocatoria/{id}")
+	public Map<String, Object> readIdConvocatoria(@PathVariable int id) {
+		return convocatoriaService.read(id);
+	}
+	
+	
 	@PostMapping("/convocatoria")
 	public int create(@RequestBody Convocatoria c) {
 		return convocatoriaService.create(c);
 	}
+	
+	@DeleteMapping("/convocatoria/{id}")
+	public int delete(@PathVariable int id) {
+		return convocatoriaService.delete(id);
+	}
+	
+	@PutMapping("/convocatoria")
+	public int update(@RequestBody Convocatoria c) {
+		
+		System.out.println(c.getNombre_convocatoria());
+		System.out.println(c.getFecha_presentacion());
+		
+		return convocatoriaService.update(c);
+	}
+	
 	
 }

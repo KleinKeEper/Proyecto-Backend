@@ -27,4 +27,22 @@ public class ConvocatoriaServiceImp implements ConvocatoriaService {
 		return convocatoriaDao.create(c);
 	}
 
+	@Override
+	public int delete(int id) {
+		// TODO Auto-generated method stub
+		return convocatoriaDao.delete(id);
+	}
+
+	@Override
+	public Map<String, Object> read(int id) {
+		// TODO Auto-generated method stub
+		return convocatoriaDao.readId(id);
+	}
+
+	@Override
+	public int update(Convocatoria c) {
+		// TODO Auto-generated method stub
+		return convocatoriaDao.update(c);
+	}
+
 }
