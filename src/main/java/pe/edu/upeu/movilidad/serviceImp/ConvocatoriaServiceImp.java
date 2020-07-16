@@ -45,4 +45,11 @@ public class ConvocatoriaServiceImp implements ConvocatoriaService {
 		return convocatoriaDao.update(c);
 	}
 
+	@Override
+	public int update_convocatoria(Convocatoria convocatoria) {
+		// TODO Auto-generated method stub
+		return convocatoriaDao.update_convocatoria(convocatoria);
+	
+	}
+
 }
