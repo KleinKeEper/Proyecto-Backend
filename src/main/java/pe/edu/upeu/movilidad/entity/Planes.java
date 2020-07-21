@@ -4,8 +4,6 @@ public class Planes {
 	private int id_plan;
 	private String doc_plan;
 	private String estado_decano;
-	private String estado_director_financiero;
-	private String estado_consejo_facultad;
 	private String estado_ocni;
 	private String estado_consejo_univ;
 	private String doc_financiero;
@@ -19,16 +17,13 @@ public class Planes {
 	public Planes() {
 		super();
 	}
-	public Planes(int id_plan, String doc_plan, String estado_decano, String estado_director_financiero,
-			String estado_consejo_facultad, String estado_ocni, String estado_consejo_univ, String doc_financiero,
+	public Planes(int id_plan, String doc_plan, String estado_decano, String estado_ocni, String estado_consejo_univ, String doc_financiero,
 			String visa, String pasaporte, String seguro_internacional, String ticket_avion, String ppt,
 			int id_presentacion_documentos, String estado_general) {
 		super();
 		this.id_plan = id_plan;
 		this.doc_plan = doc_plan;
 		this.estado_decano = estado_decano;
-		this.estado_director_financiero = estado_director_financiero;
-		this.estado_consejo_facultad = estado_consejo_facultad;
 		this.estado_ocni = estado_ocni;
 		this.estado_consejo_univ = estado_consejo_univ;
 		this.doc_financiero = doc_financiero;
@@ -57,18 +52,6 @@ public class Planes {
 	}
 	public void setEstado_decano(String estado_decano) {
 		this.estado_decano = estado_decano;
-	}
-	public String getEstado_director_financiero() {
-		return estado_director_financiero;
-	}
-	public void setEstado_director_financiero(String estado_director_financiero) {
-		this.estado_director_financiero = estado_director_financiero;
-	}
-	public String getEstado_consejo_facultad() {
-		return estado_consejo_facultad;
-	}
-	public void setEstado_consejo_facultad(String estado_consejo_facultad) {
-		this.estado_consejo_facultad = estado_consejo_facultad;
 	}
 	public String getEstado_ocni() {
 		return estado_ocni;
