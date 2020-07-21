@@ -11,4 +11,7 @@ public interface ConvocatoriaDao {
 	public int update(Convocatoria c);
 	public Map<String, Object> readId(int id);
 	Map<String, Object> readAll();
+	public Map<String, Object> readAll_convo_espera();
+	public Map<String, Object> readAll_convo_aperturada();
+	public Map<String, Object> readAll_convo_no_aperturada();
 }

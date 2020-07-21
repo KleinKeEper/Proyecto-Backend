@@ -52,4 +52,22 @@ public class ConvocatoriaServiceImp implements ConvocatoriaService {
 	
 	}
 
+	@Override
+	public Map<String, Object> readAll_convo_espera() {
+		// TODO Auto-generated method stub
+		return convocatoriaDao.readAll_convo_espera();
+	}
+
+	@Override
+	public Map<String, Object> readAll_convo_aperturada() {
+		// TODO Auto-generated method stub
+		return convocatoriaDao.readAll_convo_aperturada();
+	}
+
+	@Override
+	public Map<String, Object> readAll_convo_no_aperturada() {
+		// TODO Auto-generated method stub
+		return convocatoriaDao.readAll_convo_no_aperturada();
+	}
+
 }

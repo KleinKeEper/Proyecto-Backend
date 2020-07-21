@@ -24,6 +24,13 @@ public class PresentacionDocumentosDaoImp implements PresentacionDocumentosDao {
 		return simpleJdbcCall.execute();
 	}
 
+	@Override
+	public Map<String, Object> readAll_presentacion_documentos() {
+		// TODO Auto-generated method stub
+		simpleJdbcCall = new SimpleJdbcCall(jdbcTemplate).withFunctionName("list_presentacion_documentos").withCatalogName("pk_presentacion_documentos");
+		return simpleJdbcCall.execute();
+	}
+
 	
 	
 }

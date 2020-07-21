@@ -16,4 +16,10 @@ public class PresentacionDocumentosServiceImp implements PresentacionDocumentosS
 		return presentacionDocumentosDao.readAll_alumno_ganador();
 	}
 
+	@Override
+	public Map<String, Object> readAll_presentacion_documentos() {
+		// TODO Auto-generated method stub
+		return presentacionDocumentosDao.readAll_presentacion_documentos();
+	}
+
 }
