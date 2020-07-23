@@ -1,5 +1,8 @@
 package pe.edu.upeu.movilidad.dao;
 
-public interface OpcionesDao {
+import java.util.Map;
 
+public interface OpcionesDao {
+	
+	Map<String, Object> read(String username);
 }

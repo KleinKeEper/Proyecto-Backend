@@ -5,6 +5,7 @@ import java.util.Map;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.jdbc.core.BeanPropertyRowMapper;
 import org.springframework.jdbc.core.JdbcTemplate;
+import org.springframework.jdbc.core.simple.SimpleJdbcCall;
 import org.springframework.stereotype.Component;
 import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Transactional;
@@ -22,24 +23,33 @@ public class UsuarioDaoImp implements UsuarioDao {
 
 	@Autowired
 	private JdbcTemplate jdbcTemplate;
+	private SimpleJdbcCall simpleJdbcCall;
+	
 	
 	@Override
 	public Map<String, Object> datosUsuario(String username) {
 		// TODO Auto-generated method stub
-		String SQL = "select u.id_usuario, u.username, p.id_persona , p.nombre_persona, p.apellido_persona, ur.id_usuario_rol from persona p, usuario u, " + 
-				"usuario_rol ur where  u.id_persona = p.id_persona and u.id_usuario = ur.id_usuario and u.username = ?";
+		String SQL = "SELECT U.ID_USUARIO AS id_usuario, U.USERNAME AS username, P.ID_PERSONA  AS id_persona, P.NOMBRE_PERSONA AS nombre_persona, P.APELLIDO_PERSONA AS apellido_persona, U.FOTO AS foto FROM PERSONA P, USUARIO U, " + 
+				"USUARIO_ROL UR WHERE  U.ID_PERSONA = P.ID_PERSONA AND U.ID_USUARIO = UR.ID_USUARIO AND U.USERNAME = ?";
 		Map<String, Object> map= jdbcTemplate.queryForMap(SQL, username);
 		
 	return map;
 	}
+	
+	
 
 	@Override
 	@Transactional(readOnly = true)
 	public Usuario validarUsuario(String username) {
 		// TODO Auto-generated method stub
-		String SQL = "select * from usuario where username= ?";
+//		simpleJdbcCall = new SimpleJdbcCall(jdbcTemplate)
+//				.withProcedureName("")
+		
+		String SQL = "SELECT * FROM USUARIO WHERE USERNAME= ? AND ESTADO = 1";
 		Usuario user = new Usuario();
 		user = (Usuario)jdbcTemplate.queryForObject(SQL, new Object[]{username}, BeanPropertyRowMapper.newInstance(Usuario.class));	
+		System.out.println("hola");
+		System.out.println(user);
 		return user;
 	}
 

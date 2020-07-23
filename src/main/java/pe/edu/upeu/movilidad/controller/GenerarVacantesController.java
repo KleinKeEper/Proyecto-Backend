@@ -16,6 +16,7 @@ import org.springframework.web.bind.annotation.RestController;
 import pe.edu.upeu.movilidad.entity.Convocatoria;
 import pe.edu.upeu.movilidad.service.ConvocatoriaService;
 import pe.edu.upeu.movilidad.service.EscuelaService;
+import pe.edu.upeu.movilidad.service.FacultadServicio;
 import pe.edu.upeu.movilidad.service.UniversidadConvenioService;
 
 @CrossOrigin(origins = {"http://localhost:4200"})
@@ -32,9 +33,17 @@ public class GenerarVacantesController {
 	@Autowired
 	private ConvocatoriaService convocatoriaService;
 	
+	@Autowired
+	private FacultadServicio facultadService;
+	
 	@GetMapping("/escuela/{id}")
 	public Map<String, Object> read(@PathVariable int id) {
 		return escuelaService.readId(id);
+	}
+	
+	@GetMapping("/facultad/{id}")
+	public Map<String, Object> getID( @PathVariable int id_persona) {
+		return facultadService.getId(id_persona);
 	}
 	
 	@GetMapping("/universidad")

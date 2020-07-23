@@ -24,8 +24,8 @@ public class RolDaoImp  implements RolDao{
 	public List<GrantedAuthority> readAll(int id_usuario) {
 		// TODO Auto-generated method stub
 		List<GrantedAuthority> authors = new ArrayList<>();
-		String SQL = "SELECT u.id_usuario as 'id_usuario', r.id_rol as 'id_rol', r.nombre_rol as 'nombre_rol' "
-				+ "FROM rol r, usuario_rol ur, usuario u WHERE r.id_rol = ur.id_rol and ur.id_usuario=u.id_usuario and u.id_usuario = ?";
+		String SQL = "SELECT U.ID_USUARIO AS ID_USUARIO, R.ID_ROL AS ID_ROL, R.NOMBRE_ROL AS NOMBRE_ROL "
+				+ "FROM ROL R, USUARIO_ROL UR, USUARIO U WHERE R.ID_ROL = UR.ID_ROL AND UR.ID_USUARIO=U.ID_USUARIO AND U.ID_USUARIO = ?";
 		
 		List<Rol> roles = jdbcTemplate.query(SQL, new Object[]{id_usuario}, new BeanPropertyRowMapper<Rol>(Rol.class) );
 		for (int i = 0; i < roles.size(); i++) {

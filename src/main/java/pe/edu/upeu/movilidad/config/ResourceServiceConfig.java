@@ -21,10 +21,26 @@ public class ResourceServiceConfig extends ResourceServerConfigurerAdapter{
 	@Override
 	public void configure(HttpSecurity http) throws Exception {
 		http.authorizeRequests().antMatchers(HttpMethod.GET,"/home").permitAll()
+//		.antMatchers(HttpMethod.GET, "/api/clientes/{id}").hasAnyRole("USER", "ADMIN")
+//		.antMatchers(HttpMethod.GET, "/categoria/list", "/list/{id}").permitAll()
+		.antMatchers(HttpMethod.GET, "/principal/opciones/{username}").permitAll()
 		.antMatchers(HttpMethod.GET, "/principal").permitAll()
+		.antMatchers(HttpMethod.GET, "/vacantes/escuela/{id}").permitAll()
+		.antMatchers(HttpMethod.GET, "/vacantes/universidad").permitAll()
+		.antMatchers(HttpMethod.GET, "/vacantes/convocatoria").permitAll()
+		.antMatchers(HttpMethod.GET, "/vacantes/facultad/{id}").permitAll()
 		.anyRequest().authenticated()
 		.and().cors().configurationSource(corsConfigurationSource());
 	}
+	
+//	 if ("OPTIONS".equalsIgnoreCase(request.getMethod())) {
+//	        response.setHeader("Access-Control-Allow-Methods", "POST,GET,DELETE");
+//	        response.setHeader("Access-Control-Max-Age", "3600");
+//	        response.setHeader("Access-Control-Allow-Headers", "content-type,access-control-request-headers,access-control-request-method,accept,origin,authorization,x-requested-with");
+//	        response.setStatus(HttpServletResponse.SC_OK);
+//	    } else {
+//	        chain.doFilter(req, resp);
+//	    }
 	
 	@Bean
 	public CorsConfigurationSource corsConfigurationSource() {
