@@ -68,6 +68,35 @@ public class ConvocatoriaDaoImp implements ConvocatoriaDao {
 		return simpleJdbcCall.execute(in);
 	}
 
+	@Override
+	public int update_convocatoria(Convocatoria convocatoria) {
+		// TODO Auto-generated method stub
+		return jdbcTemplate.update("call pk_generar_vacantes.SP_APERTURAR_CONVOCATORIA(?,?)",
+				convocatoria.getId_convocatoria(),
+				convocatoria.getEstado_evaluado());	
+		}
+
+	@Override
+	public Map<String, Object> readAll_convo_espera() {
+		// TODO Auto-generated method stub
+		simpleJdbcCall = new SimpleJdbcCall(jdbcTemplate).withFunctionName("list_convo_espera").withCatalogName("pk_convocatoria");
+		return simpleJdbcCall.execute();
+	}
+
+	@Override
+	public Map<String, Object> readAll_convo_aperturada() {
+		// TODO Auto-generated method stub
+		simpleJdbcCall = new SimpleJdbcCall(jdbcTemplate).withFunctionName("list_convo_aperturada").withCatalogName("pk_convocatoria");
+		return simpleJdbcCall.execute();
+	}
+
+	@Override
+	public Map<String, Object> readAll_convo_no_aperturada() {
+		// TODO Auto-generated method stub
+		simpleJdbcCall = new SimpleJdbcCall(jdbcTemplate).withFunctionName("list_convo_no_aperturada").withCatalogName("pk_convocatoria");
+		return simpleJdbcCall.execute();
+	}
+
 	
 	
 
