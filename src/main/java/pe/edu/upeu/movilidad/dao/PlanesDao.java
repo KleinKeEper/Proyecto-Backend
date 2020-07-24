@@ -5,6 +5,7 @@ import java.util.Map;
 import pe.edu.upeu.movilidad.entity.Planes;
 
 public interface PlanesDao {
+	public int create(Planes planes);
 	public Map<String, Object> readAll_plan_direscuela_espera();
 	public Map<String, Object> readAll_plan_direscuela_aprobado();
 	public Map<String, Object> readAll_plan_direscuela_eliminado();

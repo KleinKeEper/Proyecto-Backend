@@ -12,7 +12,11 @@ import pe.edu.upeu.movilidad.service.PlanesService;
 public class PlanesServiceImp implements PlanesService{
 	@Autowired
 	private PlanesDao planesDao;
-
+	
+	@Override
+	public int create(Planes planes) {
+		return planesDao.create(planes);
+	}
 	@Override
 	public Map<String, Object> readAll_plan_direscuela_espera() {
 		return planesDao.readAll_plan_direscuela_espera();

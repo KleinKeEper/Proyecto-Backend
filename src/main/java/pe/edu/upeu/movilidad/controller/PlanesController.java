@@ -7,6 +7,7 @@ import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -24,6 +25,10 @@ public class PlanesController {
 	@Autowired
 	private PlanesService planesService;
 	
+	@PostMapping("/add")
+	public int create(@RequestBody Planes planes) {
+		return planesService.create(planes);
+	}
 	@GetMapping("/alumno_ganador")
 	public Map<String, Object> readAll_alumno_ganador(){
 		return presentacionDocumentosService.readAll_alumno_ganador();

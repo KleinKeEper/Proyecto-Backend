@@ -19,6 +19,10 @@ public class PlanesDaoImp implements PlanesDao{
 	private SimpleJdbcCall simpleJdbcCall;
 	
 	@Override
+	public int create(Planes planes) {
+		return jdbcTemplate.update("call PK_PLANES.SP_INSERTAR_PLAN (?,?)",planes.getDoc_plan(),planes.getId_presentacion_documentos());
+	}
+	@Override
 	public Map<String, Object> readAll_plan_direscuela_espera() {
 		simpleJdbcCall = new SimpleJdbcCall(jdbcTemplate).withProcedureName("SP_PLAN_DIRESCUELA_ESPERA").withCatalogName("PK_PLANES")
 				.declareParameters(new SqlOutParameter("PLAN_DIRESCUELA_ESPERA", OracleTypes.CURSOR, new ColumnMapRowMapper()));
