@@ -4,4 +4,7 @@ import java.util.Map;
 
 public interface EscuelaDao {
 	Map<String, Object> readId(int id);
+	Map<String, Object> getIdEscuela( int id);
+	
+	
 }

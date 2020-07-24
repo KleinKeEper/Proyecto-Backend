@@ -29,6 +29,14 @@ public class EscuelaDaoImp implements EscuelaDao{
 		
 		return simpleJdbcCall.execute(in);
 	}
+
+	@Override
+	public Map<String, Object> getIdEscuela(int id) {
+		// TODO Auto-generated method stub
+		simpleJdbcCall = new SimpleJdbcCall(jdbcTemplate).withFunctionName("FN_GET_ESCUELA").withCatalogName("PK_ADJUNTAR_DOCUMENTOS");
+		SqlParameterSource in = new MapSqlParameterSource().addValue("idpersona", id);
+		return simpleJdbcCall.execute(in);
+	}
 	
 
 }

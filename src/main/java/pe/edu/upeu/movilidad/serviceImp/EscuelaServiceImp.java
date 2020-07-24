@@ -20,4 +20,10 @@ public class EscuelaServiceImp implements EscuelaService {
 		return escuelaDao.readId(id);
 	}
 
+	@Override
+	public Map<String, Object> getIdEscuela(int id) {
+		// TODO Auto-generated method stub
+		return escuelaDao.getIdEscuela(id);
+	}
+
 }

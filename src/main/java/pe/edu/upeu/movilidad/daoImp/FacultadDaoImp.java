@@ -26,6 +26,7 @@ public class FacultadDaoImp  implements FacultadDao{
 	
 	@Override
 	public Map<String, Object> getID(int id_persona) {
+		System.out.println("id" + id_persona);
 		// TODO Auto-generated method stub
 		simpleJdbcCall = new SimpleJdbcCall(jdbcTemplate).withProcedureName("LIS_ID_FACULTAD").withCatalogName("PK_GENERAR_VACANTES")
 				.declareParameters(new SqlOutParameter("id_facultad", OracleTypes.CURSOR, new ColumnMapRowMapper()),

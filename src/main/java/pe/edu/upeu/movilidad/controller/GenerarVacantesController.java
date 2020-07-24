@@ -41,7 +41,7 @@ public class GenerarVacantesController {
 		return escuelaService.readId(id);
 	}
 	
-	@GetMapping("/facultad/{id}")
+	@GetMapping("/facultad/{id_persona}")
 	public Map<String, Object> getID( @PathVariable int id_persona) {
 		return facultadService.getId(id_persona);
 	}
