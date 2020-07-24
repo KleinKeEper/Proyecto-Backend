@@ -4,6 +4,7 @@ import java.util.Map;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import pe.edu.upeu.movilidad.dao.PresentacionDocumentosDao;
+import pe.edu.upeu.movilidad.entity.PresentacionDocumentos;
 import pe.edu.upeu.movilidad.service.PresentacionDocumentosService;
 
 @Service
@@ -20,6 +21,12 @@ public class PresentacionDocumentosServiceImp implements PresentacionDocumentosS
 	public Map<String, Object> readAll_presentacion_documentos() {
 		// TODO Auto-generated method stub
 		return presentacionDocumentosDao.readAll_presentacion_documentos();
+	}
+	
+	@Override
+	public int create(PresentacionDocumentos pd) {
+		// TODO Auto-generated method stub
+		return presentacionDocumentosDao.create(pd);
 	}
 
 }
