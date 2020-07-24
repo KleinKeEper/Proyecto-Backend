@@ -71,7 +71,7 @@ public class ConvocatoriaDaoImp implements ConvocatoriaDao {
 	@Override
 	public int update_convocatoria(Convocatoria convocatoria) {
 		// TODO Auto-generated method stub
-		return jdbcTemplate.update("call pk_generar_vacantes.SP_APERTURAR_CONVOCATORIA(?,?)",
+		return jdbcTemplate.update("call pk_convocatoria.SP_APERTURAR_CONVOCATORIA(?,?)",
 				convocatoria.getId_convocatoria(),
 				convocatoria.getEstado_evaluado());	
 		}
