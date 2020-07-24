@@ -34,6 +34,17 @@ public class ResourceServiceConfig extends ResourceServerConfigurerAdapter{
 		.antMatchers(HttpMethod.DELETE, "/vacantes/convocatoria/{id}").permitAll()
 		.antMatchers(HttpMethod.GET, "/vacantes/universidad/{id}").permitAll()
 		.antMatchers(HttpMethod.GET, "/vacantes/facultad/{id_persona}").permitAll()
+		.antMatchers(HttpMethod.GET, "/adjuntar/getid/{id}").permitAll()
+		.antMatchers(HttpMethod.GET, "/adjuntar/getconvocatoria/{idescuela}").permitAll()
+		.antMatchers(HttpMethod.GET, "/adjuntar/getalumno/{idalumno}").permitAll()
+		
+		.antMatchers(HttpMethod.GET, "/documentos/convocatoria/{id}").permitAll()
+		.antMatchers(HttpMethod.GET, "/convocatoria/aperturada").permitAll()
+// 
+//		.antMatchers(HttpMethod.GET, "/convocatoria/estado/{id}").permitAll()
+//		.antMatchers(HttpMethod.GET, "/convocatoria/espera").permitAll()
+//		.antMatchers(HttpMethod.GET, "/convocatoria/aperturada").permitAll()
+//		.antMatchers(HttpMethod.GET, "/convocatoria/desaperturada").permitAll()
 		.anyRequest().authenticated()
 		.and().cors().configurationSource(corsConfigurationSource());
 	}

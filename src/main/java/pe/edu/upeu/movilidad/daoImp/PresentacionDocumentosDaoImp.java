@@ -11,6 +11,7 @@ import org.springframework.stereotype.Repository;
 
 import oracle.jdbc.internal.OracleTypes;
 import pe.edu.upeu.movilidad.dao.PresentacionDocumentosDao;
+import pe.edu.upeu.movilidad.entity.PresentacionDocumentos;
 @Repository
 public class PresentacionDocumentosDaoImp implements PresentacionDocumentosDao {
 	@Autowired	
@@ -29,6 +30,13 @@ public class PresentacionDocumentosDaoImp implements PresentacionDocumentosDao {
 		// TODO Auto-generated method stub
 		simpleJdbcCall = new SimpleJdbcCall(jdbcTemplate).withFunctionName("list_presentacion_documentos").withCatalogName("pk_presentacion_documentos");
 		return simpleJdbcCall.execute();
+	}
+
+	@Override
+	public int create(PresentacionDocumentos pd) {
+		// TODO Auto-generated method stub
+		return jdbcTemplate.update("call pk_adjuntar_documentos.sp_create_presentacion(?,?,?,?)",
+				pd.getSolicitud_mae(), pd.getCarta_motivacion(), pd.getId_alumno(), pd.getId_convocatoria());
 	}
 
 	
