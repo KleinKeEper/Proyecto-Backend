@@ -29,9 +29,17 @@ public class PlanesController {
 	public int create(@RequestBody Planes planes) {
 		return planesService.create(planes);
 	}
-	@GetMapping("/alumno_ganador")
-	public Map<String, Object> readAll_alumno_ganador(){
-		return presentacionDocumentosService.readAll_alumno_ganador();
+	@GetMapping("/get_docente/{id}")
+	public Map<String, Object> getId_Docente(@PathVariable int id){
+		return planesService.getId_Docente(id);
+	}
+	@GetMapping("/get_plan/{id}")
+	public Map<String, Object> getId_Plan(@PathVariable int id){
+		return planesService.getId_Plan(id);
+	}
+	@GetMapping("/alumno_ganador/{id}")
+	public Map<String, Object> readAll_alumno_ganador(@PathVariable int id){
+		return presentacionDocumentosService.readAll_alumno_ganador(id);
 	}
 	
 	@GetMapping("/plan_direscuela_espera")

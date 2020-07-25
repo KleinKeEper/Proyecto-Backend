@@ -49,13 +49,28 @@ public class ResourceServiceConfig extends ResourceServerConfigurerAdapter{
 		.antMatchers(HttpMethod.GET, "/adjuntar/getalumno/{idalumno}").permitAll()
 		.antMatchers(HttpMethod.POST, "/adjuntar/create").permitAll()
 		
-
-		.antMatchers(HttpMethod.GET, "/planes/alumno_ganador").permitAll()
+		
+		.antMatchers(HttpMethod.POST, "/planes/add").permitAll()
+		.antMatchers(HttpMethod.GET, "/planes/get_docente/{id}").permitAll()
+		.antMatchers(HttpMethod.GET, "/planes/get_plan/{id}").permitAll()
+		.antMatchers(HttpMethod.GET, "/planes/alumno_ganador/{id}").permitAll()
 		.antMatchers(HttpMethod.GET, "/planes/plan_direscuela_espera").permitAll()
 		.antMatchers(HttpMethod.GET, "/planes/plan_direscuela_aprobado").permitAll()
 		.antMatchers(HttpMethod.GET, "/planes/plan_direscuela_eliminado").permitAll()
 		.antMatchers(HttpMethod.GET, "/planes/plan_direscuela_denegado").permitAll()
+		.antMatchers(HttpMethod.GET, "/planes/plan_ocni_espera").permitAll()
+		.antMatchers(HttpMethod.GET, "/planes/plan_ocni_aprobado").permitAll()
+		.antMatchers(HttpMethod.GET, "/planes/plan_ocni_denegado").permitAll()
+		.antMatchers(HttpMethod.GET, "/planes/plan_consejo_espera").permitAll()
+		.antMatchers(HttpMethod.GET, "/planes/plan_consejo_aprobado").permitAll()
+		.antMatchers(HttpMethod.GET, "/planes/plan_consejo_denegado").permitAll()
+		.antMatchers(HttpMethod.PUT, "/planes/estado_decano/{id}").permitAll()
+		.antMatchers(HttpMethod.PUT, "/planes/estado_ocni/{id}").permitAll()
+		.antMatchers(HttpMethod.PUT, "/planes/estado_consejo_univ/{id}").permitAll()
+		.antMatchers(HttpMethod.PUT, "/planes/estado_general/{id}").permitAll()
+		.antMatchers(HttpMethod.DELETE, "/planes/eliminar_plan/{id}").permitAll()
 
+		
 		.antMatchers(HttpMethod.GET, "/documentos/convocatoria/{id}").permitAll()
 		.anyRequest().authenticated()
 		.and().cors().configurationSource(corsConfigurationSource());

@@ -13,13 +13,12 @@ public class PresentacionDocumentosServiceImp implements PresentacionDocumentosS
 	private PresentacionDocumentosDao presentacionDocumentosDao;
 
 	@Override
-	public Map<String, Object> readAll_alumno_ganador() {
-		return presentacionDocumentosDao.readAll_alumno_ganador();
+	public Map<String, Object> readAll_alumno_ganador(int id_persona) {
+		return presentacionDocumentosDao.readAll_alumno_ganador(id_persona);
 	}
 
 	@Override
 	public Map<String, Object> readAll_presentacion_documentos() {
-		// TODO Auto-generated method stub
 		return presentacionDocumentosDao.readAll_presentacion_documentos();
 	}
 	

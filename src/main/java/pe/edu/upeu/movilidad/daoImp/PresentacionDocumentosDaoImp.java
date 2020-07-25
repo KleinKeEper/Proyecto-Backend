@@ -1,11 +1,15 @@
 package pe.edu.upeu.movilidad.daoImp;
 
+import java.sql.Types;
 import java.util.Map;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.jdbc.core.ColumnMapRowMapper;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.jdbc.core.SqlOutParameter;
+import org.springframework.jdbc.core.SqlParameter;
+import org.springframework.jdbc.core.namedparam.MapSqlParameterSource;
+import org.springframework.jdbc.core.namedparam.SqlParameterSource;
 import org.springframework.jdbc.core.simple.SimpleJdbcCall;
 import org.springframework.stereotype.Repository;
 
@@ -19,10 +23,13 @@ public class PresentacionDocumentosDaoImp implements PresentacionDocumentosDao {
 	private SimpleJdbcCall simpleJdbcCall;
 	
 	@Override
-	public Map<String, Object> readAll_alumno_ganador() {
-		simpleJdbcCall = new SimpleJdbcCall(jdbcTemplate).withProcedureName("SP_LISTAR_ALUMNO_GANADOR").withCatalogName("PK_PLANES")
-				.declareParameters(new SqlOutParameter("SALIDA_ALUMNO_GANADOR", OracleTypes.CURSOR, new ColumnMapRowMapper()));
-		return simpleJdbcCall.execute();
+	public Map<String, Object> readAll_alumno_ganador(int id_persona) {
+		simpleJdbcCall = new SimpleJdbcCall(jdbcTemplate)
+				.withProcedureName("SP_LISTAR_ALUMNO_GANADOR").withCatalogName("PK_PLANES")
+				.declareParameters(new SqlOutParameter("SALIDA_ALUMNO_GANADOR", OracleTypes
+						.CURSOR, new ColumnMapRowMapper()), new SqlParameter("ID_PERSONA_ENTRADA", Types.INTEGER));
+		SqlParameterSource in = new MapSqlParameterSource().addValue("ID_PERSONA_ENTRADA", id_persona);
+		return simpleJdbcCall.execute(in);
 	}
 
 	@Override
