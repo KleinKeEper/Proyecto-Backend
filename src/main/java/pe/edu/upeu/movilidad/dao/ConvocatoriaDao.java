@@ -16,6 +16,7 @@ public interface ConvocatoriaDao {
 	public Map<String, Object> readAll_convo_no_aperturada();
 
 	public Map<String, Object> getConvocatorias( int idescuela);
+	
 }
 
 

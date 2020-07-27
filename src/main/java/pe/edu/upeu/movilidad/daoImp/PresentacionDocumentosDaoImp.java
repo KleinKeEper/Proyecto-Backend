@@ -45,6 +45,19 @@ public class PresentacionDocumentosDaoImp implements PresentacionDocumentosDao {
 		return jdbcTemplate.update("call pk_adjuntar_documentos.sp_create_presentacion(?,?,?,?)",
 				pd.getSolicitud_mae(), pd.getCarta_motivacion(), pd.getId_alumno(), pd.getId_convocatoria());
 	}
+	
+	@Override
+	public Map<String, Object> getPostulaciones(int idalumno, int idconvocatoria) {
+		// TODO Auto-generated method stub
+		simpleJdbcCall = new SimpleJdbcCall(jdbcTemplate).withFunctionName("FN_POSTULAR_DENUEVO").withCatalogName("PK_ADJUNTAR_DOCUMENTOS");
+		System.out.println("idalumno" + idalumno);
+		System.out.println("idconvocatoria" + idconvocatoria);
+		
+		// SqlParameterSource in = new MapSqlParameterSource().addValue("IDALUMNO ", idalumno);
+		// SqlParameterSource ino = new MapSqlParameterSource().addValue("IDCONVOCATORIA", idconvocatoria);
+		
+		return simpleJdbcCall.execute(idalumno,idconvocatoria);
+	}
 
 	
 	
