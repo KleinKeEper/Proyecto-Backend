@@ -8,4 +8,6 @@ public interface SolicitarDocumentosDao {
 	public int create( SolicitarDocumentos sd);
 	
 	Map<String, Object> validar( int idpresentacion);
+	
+	Map<String, Object> getDocumentosSolictados(int idpersona);
 }

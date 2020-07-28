@@ -27,4 +27,10 @@ public class SolicitarDocumentosServiceImp implements SolicitarDocumentosService
 		return solicitarDocumentosDao.validar(idpresentacion);
 	}
 
+	@Override
+	public Map<String, Object> getDocumentosSolictados(int idpersona) {
+		// TODO Auto-generated method stub
+		return solicitarDocumentosDao.getDocumentosSolictados(idpersona);
+	}
+
 }

@@ -40,4 +40,10 @@ public class SolicitarDocumentosController {
 	return solicitarDocumentosServiceImp.validar(idpresentacion);	
 	}
 	
+	
+	@GetMapping("/getdocumentos/{idpersona}")
+	public Map<String, Object> getDocuementosSolictado(@PathVariable int idpersona) {
+		return solicitarDocumentosServiceImp.getDocumentosSolictados(idpersona);
+	}
+	
 }

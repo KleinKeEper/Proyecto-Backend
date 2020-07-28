@@ -37,4 +37,16 @@ public class SolicitarDocumentosDaoImp implements SolicitarDocumentosDao {
 		return simpleJdbcCall.execute(in);
 	}
 
+
+	@Override
+	public Map<String, Object> getDocumentosSolictados(int idpersona) {
+		// TODO Auto-generated method stub
+		
+		simpleJdbcCall = new SimpleJdbcCall(jdbcTemplate).withFunctionName("FN_LISTAR_SOLICITDOS").withCatalogName("PK_ADJUNTAR_SOLICITADOS");
+		
+		SqlParameterSource  in = new MapSqlParameterSource().addValue("idpersona", idpersona);
+		
+		return simpleJdbcCall.execute(in) ;
+	}
+
 }

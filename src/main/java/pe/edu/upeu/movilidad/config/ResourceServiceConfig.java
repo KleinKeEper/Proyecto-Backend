@@ -52,7 +52,9 @@ public class ResourceServiceConfig extends ResourceServerConfigurerAdapter{
 
 		.antMatchers(HttpMethod.POST, "/solicitar/create").permitAll()
 		.antMatchers(HttpMethod.GET, "/solicitar/documentos").permitAll()
-		.antMatchers(HttpMethod.GET, "/solicitar//validar/{idpresentacion}").permitAll()
+		.antMatchers(HttpMethod.GET, "/solicitar/validar/{idpresentacion}").permitAll()
+		
+		.antMatchers(HttpMethod.GET, "/solicitar/getdocumentos/{idpersona}").permitAll()
 		
 		
 		
