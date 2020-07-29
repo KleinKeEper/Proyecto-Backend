@@ -69,6 +69,17 @@ public class ResourceServiceConfig extends ResourceServerConfigurerAdapter{
 		.antMatchers(HttpMethod.PUT, "/planes/estado_consejo_univ/{id}").permitAll()
 		.antMatchers(HttpMethod.PUT, "/planes/estado_general/{id}").permitAll()
 		.antMatchers(HttpMethod.DELETE, "/planes/eliminar_plan/{id}").permitAll()
+	
+		.antMatchers(HttpMethod.POST, "/constancia_fin/add").permitAll()
+		.antMatchers(HttpMethod.GET, "/constancia_fin/constancia_financiera").permitAll()
+		.antMatchers(HttpMethod.GET, "/constancia_fin/get_facultad").permitAll()
+		.antMatchers(HttpMethod.GET, "/constancia_fin/get_escuela_facultad/{id}").permitAll()
+		.antMatchers(HttpMethod.GET, "/constancia_fin/get_plan_escuela/{id}").permitAll()
+		
+		.antMatchers(HttpMethod.POST, "/tramite/add").permitAll()
+		.antMatchers(HttpMethod.GET, "/tramite/listar").permitAll()
+
+
 
 		
 		.antMatchers(HttpMethod.GET, "/documentos/convocatoria/{id}").permitAll()
