@@ -28,4 +28,10 @@ public class PresentacionDocumentosServiceImp implements PresentacionDocumentosS
 		return presentacionDocumentosDao.create(pd);
 	}
 
+
+	@Override
+	public Map<String, Object> getPostulaciones(int idalumno, int idconvocatoria) {
+		// TODO Auto-generated method stub
+		return presentacionDocumentosDao.getPostulaciones(idalumno, idconvocatoria);
+	}
 }

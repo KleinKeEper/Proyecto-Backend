@@ -23,9 +23,28 @@ public class AlumnoDaoImp implements AlumnoDao {
 		// TODO Auto-generated method stub
 		
 		simpleJdbcTemplate = new SimpleJdbcCall(jdbcTemplate).withFunctionName("FN_GET_ALUMNO").withCatalogName("PK_ADJUNTAR_DOCUMENTOS");
-		
 		SqlParameterSource in = new MapSqlParameterSource().addValue("idalumno", idalumno); 
 		return simpleJdbcTemplate.execute(in);
 	}
+
+	@Override
+	public Map<String, Object> now(int idpersona) {
+		// TODO Auto-generated method stub
+		simpleJdbcTemplate = new SimpleJdbcCall(jdbcTemplate).withFunctionName("FN_NOW").withCatalogName("PKG_LOGIN");
+		System.out.println("idpersona" + idpersona);
+		SqlParameterSource in = new MapSqlParameterSource().addValue("idpersona", idpersona);
+		return simpleJdbcTemplate.execute(in);
+	}
+
+	@Override
+	public Map<String, Object> filtrar(int idalumno) {
+		// TODO Auto-generated method stub
+		simpleJdbcTemplate = new SimpleJdbcCall(jdbcTemplate).withFunctionName("FN_FILTRAR_OPCIONES").withCatalogName("PKG_LOGIN");
+		
+		SqlParameterSource in = new MapSqlParameterSource().addValue("idalumno", idalumno);
+		return simpleJdbcTemplate.execute(in);
+	}
+	
+	
 
 }

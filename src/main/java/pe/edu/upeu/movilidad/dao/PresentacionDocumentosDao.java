@@ -9,5 +9,6 @@ public interface PresentacionDocumentosDao {
 	public Map<String, Object> readAll_presentacion_documentos();
 	
 	public int create (PresentacionDocumentos pd);
+	public Map<String, Object> getPostulaciones(int idalumno, int idconvocatoria);
 
 }

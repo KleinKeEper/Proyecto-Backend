@@ -56,4 +56,9 @@ public class AdjuntarDocumentos {
 		return presentacionDocumentosService.create(pd);
 	}
 	
+	@GetMapping("/getpostulaciones/{idalumno}/{idconvocatoria}")
+	public Map<String, Object> getPostulaciones(@PathVariable int idalumno, @PathVariable int idconvocatoria) {
+		return presentacionDocumentosService.getPostulaciones(idalumno, idconvocatoria);
+	}
+	
 }

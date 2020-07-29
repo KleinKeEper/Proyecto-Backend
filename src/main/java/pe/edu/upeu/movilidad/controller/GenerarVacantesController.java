@@ -80,9 +80,6 @@ public class GenerarVacantesController {
 	@PutMapping("/convocatoria")
 	public int update(@RequestBody Convocatoria c) {
 		
-		System.out.println(c.getNombre_convocatoria());
-		System.out.println(c.getFecha_presentacion());
-		
 		return convocatoriaService.update(c);
 	}
 	
