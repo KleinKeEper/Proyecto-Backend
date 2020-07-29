@@ -20,4 +20,17 @@ public class AlumnoServiceImp implements AlumnoService {
 		return alumnoDao.getAlumno(idalumno);
 	}
 
+	@Override
+	public Map<String, Object> now(int idpersona) {
+		// TODO Auto-generated method stub
+		System.out.println("idpersona service" + idpersona);
+		return alumnoDao.now(idpersona);
+	}
+
+	@Override
+	public Map<String, Object> filtrar(int idalumno) {
+		// TODO Auto-generated method stub
+		return alumnoDao.filtrar(idalumno);
+	}
+
 }

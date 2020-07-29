@@ -49,4 +49,12 @@ public class SolicitarDocumentosDaoImp implements SolicitarDocumentosDao {
 		return simpleJdbcCall.execute(in) ;
 	}
 
+
+	@Override
+	public int updateFile(SolicitarDocumentos sd) {
+		// TODO Auto-generated method stub
+		return jdbcTemplate.update("call pk_adjuntar_solicitados.sp_update_file(?,?)", 
+				sd.getId_solicitar_documentos(), sd.getLink());
+	}
+
 }
