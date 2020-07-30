@@ -66,10 +66,10 @@ public class ResourceServiceConfig extends ResourceServerConfigurerAdapter{
 		.antMatchers(HttpMethod.GET, "/planes/get_docente/{id}").permitAll()
 		.antMatchers(HttpMethod.GET, "/planes/get_plan/{id}").permitAll()
 		.antMatchers(HttpMethod.GET, "/planes/alumno_ganador/{id}").permitAll()
-		.antMatchers(HttpMethod.GET, "/planes/plan_direscuela_espera").permitAll()
-		.antMatchers(HttpMethod.GET, "/planes/plan_direscuela_aprobado").permitAll()
-		.antMatchers(HttpMethod.GET, "/planes/plan_direscuela_eliminado").permitAll()
-		.antMatchers(HttpMethod.GET, "/planes/plan_direscuela_denegado").permitAll()
+		.antMatchers(HttpMethod.GET, "/planes/plan_direscuela_espera/{id}").permitAll()
+		.antMatchers(HttpMethod.GET, "/planes/plan_direscuela_aprobado/{id}").permitAll()
+		.antMatchers(HttpMethod.GET, "/planes/plan_direscuela_eliminado/{id}").permitAll()
+		.antMatchers(HttpMethod.GET, "/planes/plan_direscuela_denegado/{id}").permitAll()
 		.antMatchers(HttpMethod.GET, "/planes/plan_ocni_espera").permitAll()
 		.antMatchers(HttpMethod.GET, "/planes/plan_ocni_aprobado").permitAll()
 		.antMatchers(HttpMethod.GET, "/planes/plan_ocni_denegado").permitAll()
@@ -90,6 +90,10 @@ public class ResourceServiceConfig extends ResourceServerConfigurerAdapter{
 		
 		.antMatchers(HttpMethod.POST, "/tramite/add").permitAll()
 		.antMatchers(HttpMethod.GET, "/tramite/listar").permitAll()
+		
+		.antMatchers(HttpMethod.POST, "/presentacion_alumno/add").permitAll()
+		.antMatchers(HttpMethod.GET, "/presentacion_alumno/listar").permitAll()
+
 
 
 

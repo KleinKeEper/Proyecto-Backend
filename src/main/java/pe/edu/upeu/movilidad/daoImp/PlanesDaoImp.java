@@ -46,31 +46,43 @@ public class PlanesDaoImp implements PlanesDao{
 		return simpleJdbcCall.execute(in);
 	}
 	@Override
-	public Map<String, Object> readAll_plan_direscuela_espera() {
-		simpleJdbcCall = new SimpleJdbcCall(jdbcTemplate).withProcedureName("SP_PLAN_DIRESCUELA_ESPERA").withCatalogName("PK_PLANES")
-				.declareParameters(new SqlOutParameter("PLAN_DIRESCUELA_ESPERA", OracleTypes.CURSOR, new ColumnMapRowMapper()));
-		return simpleJdbcCall.execute();
+	public Map<String, Object> readAll_plan_direscuela_espera(int idpersona) {
+		simpleJdbcCall = new SimpleJdbcCall(jdbcTemplate)
+				.withProcedureName("SP_PLAN_DIRESCUELA_ESPERA").withCatalogName("PK_PLANES")
+				.declareParameters(new SqlOutParameter("PLAN_DIRESCUELA_ESPERA", OracleTypes
+						.CURSOR, new ColumnMapRowMapper()), new SqlParameter("ID_PERSONA_ENTRADA", Types.INTEGER));
+		SqlParameterSource in = new MapSqlParameterSource().addValue("ID_PERSONA_ENTRADA", idpersona);
+		return simpleJdbcCall.execute(in);
 	}
 
 	@Override
-	public Map<String, Object> readAll_plan_direscuela_aprobado() {
-		simpleJdbcCall = new SimpleJdbcCall(jdbcTemplate).withProcedureName("SP_PLAN_DIRESCUELA_APROBADO").withCatalogName("PK_PLANES")
-				.declareParameters(new SqlOutParameter("PLAN_DIRESCUELA_APROBADO", OracleTypes.CURSOR, new ColumnMapRowMapper()));
-		return simpleJdbcCall.execute();
+	public Map<String, Object> readAll_plan_direscuela_aprobado(int idpersona) {
+		simpleJdbcCall = new SimpleJdbcCall(jdbcTemplate)
+				.withProcedureName("SP_PLAN_DIRESCUELA_APROBADO").withCatalogName("PK_PLANES")
+				.declareParameters(new SqlOutParameter("PLAN_DIRESCUELA_APROBADO", OracleTypes
+						.CURSOR, new ColumnMapRowMapper()), new SqlParameter("ID_PERSONA_ENTRADA", Types.INTEGER));
+		SqlParameterSource in = new MapSqlParameterSource().addValue("ID_PERSONA_ENTRADA", idpersona);
+		return simpleJdbcCall.execute(in);
 	}
 
 	@Override
-	public Map<String, Object> readAll_plan_direscuela_eliminado() {
-		simpleJdbcCall = new SimpleJdbcCall(jdbcTemplate).withProcedureName("SP_PLAN_DIRESCUELA_ELIMINADO").withCatalogName("PK_PLANES")
-				.declareParameters(new SqlOutParameter("PLAN_DIRESCUELA_ELIMINADO", OracleTypes.CURSOR, new ColumnMapRowMapper()));
-		return simpleJdbcCall.execute();
+	public Map<String, Object> readAll_plan_direscuela_eliminado(int idpersona) {
+		simpleJdbcCall = new SimpleJdbcCall(jdbcTemplate)
+				.withProcedureName("SP_PLAN_DIRESCUELA_ELIMINADO").withCatalogName("PK_PLANES")
+				.declareParameters(new SqlOutParameter("PLAN_DIRESCUELA_ELIMINADO", OracleTypes
+						.CURSOR, new ColumnMapRowMapper()), new SqlParameter("ID_PERSONA_ENTRADA", Types.INTEGER));
+		SqlParameterSource in = new MapSqlParameterSource().addValue("ID_PERSONA_ENTRADA", idpersona);
+		return simpleJdbcCall.execute(in);
 	}
 
 	@Override
-	public Map<String, Object> readAll_plan_direscuela_denegado() {
-		simpleJdbcCall = new SimpleJdbcCall(jdbcTemplate).withProcedureName("SP_PLAN_DIRESCUELA_DENEGADO").withCatalogName("PK_PLANES")
-				.declareParameters(new SqlOutParameter("PLAN_DIRESCUELA_DENEGADO", OracleTypes.CURSOR, new ColumnMapRowMapper()));
-		return simpleJdbcCall.execute();
+	public Map<String, Object> readAll_plan_direscuela_denegado(int idpersona) {
+		simpleJdbcCall = new SimpleJdbcCall(jdbcTemplate)
+				.withProcedureName("SP_PLAN_DIRESCUELA_DENEGADO").withCatalogName("PK_PLANES")
+				.declareParameters(new SqlOutParameter("PLAN_DIRESCUELA_DENEGADO", OracleTypes
+						.CURSOR, new ColumnMapRowMapper()), new SqlParameter("ID_PERSONA_ENTRADA", Types.INTEGER));
+		SqlParameterSource in = new MapSqlParameterSource().addValue("ID_PERSONA_ENTRADA", idpersona);
+		return simpleJdbcCall.execute(in);
 	}
 	
 	@Override
