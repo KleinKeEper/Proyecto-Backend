@@ -60,5 +60,10 @@ public class ConstanciaFinancieraDaoImp implements ConstanciaFinancieraDao{
 		SqlParameterSource in = new MapSqlParameterSource().addValue("IDESCUELA", idescuela);
 		return simpleJdbcCall.execute(in);
 	}
+	
+	@Override
+	public int eliminar_constancia(int id) {
+		return jdbcTemplate.update("call PK_PLANES.SP_ELIMINAR_CONSTANCIA(?)",id);
+	}
 
 }

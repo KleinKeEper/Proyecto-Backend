@@ -7,6 +7,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.jdbc.core.ColumnMapRowMapper;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.jdbc.core.SqlOutParameter;
+
 import org.springframework.jdbc.core.SqlParameter;
 import org.springframework.jdbc.core.namedparam.MapSqlParameterSource;
 import org.springframework.jdbc.core.namedparam.SqlParameterSource;
@@ -39,6 +40,21 @@ public class PresentacionDocumentosDaoImp implements PresentacionDocumentosDao {
 		return simpleJdbcCall.execute();
 	}
 
+	@Override
+	public int update_presentacion_documentos(PresentacionDocumentos presentacionDocumentos) {
+		return jdbcTemplate.update("call pk_presentacion_documentos.SP_APROBAR_DOCUMENTOS_OCNI(?,?)",
+				presentacionDocumentos.getId_presentacion_documentos(),
+				presentacionDocumentos.getEstado_evaluado());
+	}
+
+	@Override
+	public Map<String, Object> readAll_documentos_director(int id_persona) {
+		// TODO Auto-generated method stub
+		simpleJdbcCall = new SimpleJdbcCall(jdbcTemplate).withFunctionName("list_prese_doc_dir").withCatalogName("pk_presentacion_documentos");
+		SqlParameterSource in =new MapSqlParameterSource().addValue("ID_PERSONA_ENTRADA", id_persona);
+		return simpleJdbcCall.execute(in);
+		}
+		
 	@Override
 	public int create(PresentacionDocumentos pd) {
 		// TODO Auto-generated method stub

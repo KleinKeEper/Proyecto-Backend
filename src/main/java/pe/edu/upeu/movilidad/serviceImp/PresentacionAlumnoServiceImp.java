@@ -23,4 +23,10 @@ public class PresentacionAlumnoServiceImp implements PresentacionAlumnoService{
 		return presentacionAlumnoDao.read_Presentacion();
 	}
 
+	@Override
+	public int eliminar_presentacion(int id) {
+		return presentacionAlumnoDao.eliminar_presentacion(id);
+
+	}
+
 }

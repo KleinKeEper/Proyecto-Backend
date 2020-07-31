@@ -34,6 +34,21 @@ public class ResourceServiceConfig extends ResourceServerConfigurerAdapter{
 
 		.antMatchers(HttpMethod.GET, "/vacantes/convocatoriagen/{idescuela}").permitAll()
 		.antMatchers(HttpMethod.GET, "/vacantes/facultad/{id}").permitAll()
+		.antMatchers(HttpMethod.PUT, "/convocatoria/estado/{id}").permitAll()
+		.antMatchers(HttpMethod.GET, "/convocatoria/espera").permitAll()
+		.antMatchers(HttpMethod.GET, "/convocatoria/aperturada").permitAll()
+		.antMatchers(HttpMethod.GET, "/convocatoria/desaperturada").permitAll()
+		
+		.antMatchers(HttpMethod.GET, "/documentos/convocatoria/{id}").permitAll()
+		.antMatchers(HttpMethod.GET, "/documentos/convocatoria").permitAll()
+		.antMatchers(HttpMethod.PUT, "/documentos/estado/{id}").permitAll()
+
+
+
+
+		
+
+		.antMatchers(HttpMethod.GET,  "/vacantes/convocatoria").permitAll()
 		.antMatchers(HttpMethod.PUT,  "/vacantes/convocatoria").permitAll()
 		.antMatchers(HttpMethod.POST,  "/vacantes/convocatoria").permitAll()
 		.antMatchers(HttpMethod.GET, "/vacantes/convocatoria/{id}").permitAll()
@@ -41,6 +56,7 @@ public class ResourceServiceConfig extends ResourceServerConfigurerAdapter{
 		.antMatchers(HttpMethod.GET, "/vacantes/universidad/{id}").permitAll()
 		.antMatchers(HttpMethod.GET, "/vacantes/facultad/{id_persona}").permitAll()
 		
+
 		.antMatchers(HttpMethod.PUT, "/convocatoria/estado/{id}").permitAll()
 		.antMatchers(HttpMethod.GET, "/convocatoria/espera").permitAll()
 		.antMatchers(HttpMethod.GET, "/convocatoria/aperturada").permitAll()
@@ -91,13 +107,15 @@ public class ResourceServiceConfig extends ResourceServerConfigurerAdapter{
 		.antMatchers(HttpMethod.GET, "/constancia_fin/get_facultad").permitAll()
 		.antMatchers(HttpMethod.GET, "/constancia_fin/get_escuela_facultad/{id}").permitAll()
 		.antMatchers(HttpMethod.GET, "/constancia_fin/get_plan_escuela/{id}").permitAll()
+		.antMatchers(HttpMethod.DELETE, "/constancia_fin/eliminar_constancia/{id}").permitAll()
 		
 		.antMatchers(HttpMethod.POST, "/tramite/add").permitAll()
 		.antMatchers(HttpMethod.GET, "/tramite/listar").permitAll()
-		
+		.antMatchers(HttpMethod.DELETE, "/tramite/eliminar_tramite/{id}").permitAll()
+
 		.antMatchers(HttpMethod.POST, "/presentacion_alumno/add").permitAll()
 		.antMatchers(HttpMethod.GET, "/presentacion_alumno/listar").permitAll()
-
+		.antMatchers(HttpMethod.DELETE, "/presentacion_alumno/eliminar_presentacion/{id}").permitAll()
 
 
 

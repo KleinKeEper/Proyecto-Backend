@@ -23,4 +23,9 @@ public class TramiteServiceImp implements TramiteService{
 	public Map<String, Object> readAll_Tramite() {
 		return tramiteDao.readAll_Tramite();
 	}
+
+	@Override
+	public int eliminar_tramite(int id) {
+		return tramiteDao.eliminar_tramite(id);
+	}
 }

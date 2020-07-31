@@ -7,5 +7,6 @@ import pe.edu.upeu.movilidad.entity.*;
 public interface TramiteDao {
 	public int create(Tramite tramite);
 	public Map<String, Object> readAll_Tramite();
+	public int eliminar_tramite(int id);
 
 }

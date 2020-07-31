@@ -17,4 +17,5 @@ public interface ConvocatoriaService {
 	
 	public Map<String, Object> getConvocatorias( int idescuela);
 
+
 }

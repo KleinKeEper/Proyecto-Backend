@@ -7,4 +7,5 @@ import pe.edu.upeu.movilidad.entity.*;
 public interface PresentacionAlumnoDao {
 	public int create(PresentacionAlumno presentacionAlumno);
 	public Map<String, Object> read_Presentacion();
+	public int eliminar_presentacion(int id);
 }

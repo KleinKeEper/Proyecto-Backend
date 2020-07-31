@@ -3,6 +3,7 @@ import java.util.Map;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.CrossOrigin;
+import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -43,5 +44,10 @@ public class ConstanciaFinancieraController {
 	@GetMapping("/get_plan_escuela/{id}")
 	public Map<String, Object> getPlanEscuela(@PathVariable int id){
 		return constanciaService.getPlanEscuela(id);
+	}
+	
+	@DeleteMapping("/eliminar_constancia/{id}")
+	public int eliminar_constancia(@PathVariable int id) {
+		return constanciaService.eliminar_constancia(id);
 	}
 }

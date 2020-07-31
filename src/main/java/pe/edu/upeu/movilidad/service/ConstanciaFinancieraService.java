@@ -10,4 +10,6 @@ public interface ConstanciaFinancieraService {
 	public Map<String, Object> getFacultad();
 	public Map<String, Object> getEscuelaFacultad(int idfacultad);
 	public Map<String, Object> getPlanEscuela(int idescuela);
+	public int eliminar_constancia(int id);
+
 }
