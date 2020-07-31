@@ -39,4 +39,10 @@ public class SolicitarDocumentosServiceImp implements SolicitarDocumentosService
 		return solicitarDocumentosDao.updateFile(sd);
 	}
 
+	@Override
+	public Map<String, Object> get(int idpersona) {
+		// TODO Auto-generated method stub
+		return solicitarDocumentosDao.get(idpersona);
+	}
+
 }

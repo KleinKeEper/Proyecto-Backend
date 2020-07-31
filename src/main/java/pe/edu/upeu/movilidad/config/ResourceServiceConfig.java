@@ -27,6 +27,7 @@ public class ResourceServiceConfig extends ResourceServerConfigurerAdapter{
 		.antMatchers(HttpMethod.GET, "/principal").permitAll()
 		.antMatchers(HttpMethod.GET, "/principal/now/{idpersona}").permitAll()
 		.antMatchers(HttpMethod.GET, "/principal/filtrar/{idalumno}").permitAll()
+		.antMatchers(HttpMethod.GET, "/principal/name/{idpersona}/{opcion}").permitAll()
 		
 		.antMatchers(HttpMethod.GET, "/vacantes/escuela/{id}").permitAll()
 		.antMatchers(HttpMethod.GET, "/vacantes/universidad").permitAll()
@@ -59,6 +60,9 @@ public class ResourceServiceConfig extends ResourceServerConfigurerAdapter{
 		
 		.antMatchers(HttpMethod.GET, "/solicitar/getdocumentos/{idpersona}").permitAll()
 		.antMatchers(HttpMethod.PUT, "/solicitar/update").permitAll()
+		
+		.antMatchers(HttpMethod.GET, "/recepcionar/get/{idpersona}").permitAll()
+		.antMatchers(HttpMethod.GET, "/recepcionar/documento/{idpresentacion}").permitAll()
 		
 		
 		

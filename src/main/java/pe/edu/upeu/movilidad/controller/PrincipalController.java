@@ -10,6 +10,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import pe.edu.upeu.movilidad.service.AlumnoService;
+import pe.edu.upeu.movilidad.service.EscuelaService;
 import pe.edu.upeu.movilidad.service.OpcionesService;
 
 @CrossOrigin(origins = {"http://localhost:4200"})
@@ -23,6 +24,9 @@ public class PrincipalController {
 	@Autowired
 	private AlumnoService alumnoService;
 	
+	
+	@Autowired
+	private EscuelaService escuelaService;
 	
 	@GetMapping("/opciones/{username}")
 	public Map<String, Object> read( @PathVariable String username) {
@@ -38,6 +42,11 @@ public class PrincipalController {
 	@GetMapping("/filtrar/{idalumno}")
 	public Map<String, Object> filtar( @PathVariable int idalumno ) {
 		return alumnoService.filtrar(idalumno);
+	}
+
+	@GetMapping("/name/{idpersona}/{opcion}")
+	public Map<String, Object> getNameEscuela( @PathVariable int idpersona, @PathVariable int opcion) {
+		return escuelaService.getNameEscuela(idpersona, opcion);
 	}
 
 }

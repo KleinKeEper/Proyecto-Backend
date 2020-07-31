@@ -3,6 +3,7 @@ package pe.edu.upeu.movilidad.controller;
 import java.util.Map;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.access.annotation.Secured;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -46,6 +47,7 @@ public class GenerarVacantesController {
 		return facultadService.getId(id_persona);
 	}
 	
+
 	@GetMapping("/universidad")
 	public Map<String, Object> readAll() {
 		return universidadConvenioService.readAll();

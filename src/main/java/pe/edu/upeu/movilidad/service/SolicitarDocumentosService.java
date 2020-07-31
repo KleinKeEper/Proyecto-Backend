@@ -9,5 +9,7 @@ public interface SolicitarDocumentosService {
 	Map<String, Object> validar(int idpresentacion);
 	Map<String, Object> getDocumentosSolictados(int idpersona);
 	public int updateFile(SolicitarDocumentos sd);
+	
+	Map<String, Object> get(int idpersona);
 }
 

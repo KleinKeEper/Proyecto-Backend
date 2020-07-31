@@ -21,4 +21,10 @@ public class DocumentosServiceImp implements DocumentosService {
 		return documentosDao.radAll();
 	}
 
+	@Override
+	public Map<String, Object> getDocumentos(int idpresentacion) {
+		// TODO Auto-generated method stub
+		return documentosDao.getDocumentos(idpresentacion);
+	}
+
 }
