@@ -34,7 +34,6 @@ public class ResourceServiceConfig extends ResourceServerConfigurerAdapter{
 
 		.antMatchers(HttpMethod.GET, "/vacantes/convocatoria").permitAll()
 		.antMatchers(HttpMethod.GET, "/vacantes/facultad/{id}").permitAll()
-<<<<<<< HEAD
 		.antMatchers(HttpMethod.PUT, "/convocatoria/estado/{id}").permitAll()
 		.antMatchers(HttpMethod.GET, "/convocatoria/espera").permitAll()
 		.antMatchers(HttpMethod.GET, "/convocatoria/aperturada").permitAll()
@@ -50,8 +49,6 @@ public class ResourceServiceConfig extends ResourceServerConfigurerAdapter{
 		
 
 		.antMatchers(HttpMethod.GET,  "/vacantes/convocatoria").permitAll()
-=======
->>>>>>> da20c00b0404e5b27ad9a31740e8019fbb39df3b
 		.antMatchers(HttpMethod.PUT,  "/vacantes/convocatoria").permitAll()
 		.antMatchers(HttpMethod.POST,  "/vacantes/convocatoria").permitAll()
 		.antMatchers(HttpMethod.GET, "/vacantes/convocatoria/{id}").permitAll()
@@ -59,8 +56,7 @@ public class ResourceServiceConfig extends ResourceServerConfigurerAdapter{
 		.antMatchers(HttpMethod.GET, "/vacantes/universidad/{id}").permitAll()
 		.antMatchers(HttpMethod.GET, "/vacantes/facultad/{id_persona}").permitAll()
 		
-<<<<<<< HEAD
-=======
+
 		.antMatchers(HttpMethod.PUT, "/convocatoria/estado/{id}").permitAll()
 		.antMatchers(HttpMethod.GET, "/convocatoria/espera").permitAll()
 		.antMatchers(HttpMethod.GET, "/convocatoria/aperturada").permitAll()
@@ -123,7 +119,6 @@ public class ResourceServiceConfig extends ResourceServerConfigurerAdapter{
 
 		
 		.antMatchers(HttpMethod.GET, "/documentos/convocatoria/{id}").permitAll()
->>>>>>> da20c00b0404e5b27ad9a31740e8019fbb39df3b
 		.anyRequest().authenticated()
 		.and().cors().configurationSource(corsConfigurationSource());
 	}
