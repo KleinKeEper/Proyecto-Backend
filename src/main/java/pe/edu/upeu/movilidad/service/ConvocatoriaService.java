@@ -15,4 +15,5 @@ public interface ConvocatoriaService {
 	public Map<String, Object> readAll_convo_aperturada();
 	public Map<String, Object> readAll_convo_no_aperturada();
 
+
 }

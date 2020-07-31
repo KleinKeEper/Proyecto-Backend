@@ -70,4 +70,5 @@ public class ConvocatoriaServiceImp implements ConvocatoriaService {
 		return convocatoriaDao.readAll_convo_no_aperturada();
 	}
 
+
 }
