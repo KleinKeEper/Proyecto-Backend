@@ -28,23 +28,23 @@ public class PlanesServiceImp implements PlanesService{
 		return planesDao.getId_Plan(idplan);
 	}
 	@Override
-	public Map<String, Object> readAll_plan_direscuela_espera() {
-		return planesDao.readAll_plan_direscuela_espera();
+	public Map<String, Object> readAll_plan_direscuela_espera(int idpersona) {
+		return planesDao.readAll_plan_direscuela_espera(idpersona);
 	}
 
 	@Override
-	public Map<String, Object> readAll_plan_direscuela_aprobado() {
-		return planesDao.readAll_plan_direscuela_aprobado();
+	public Map<String, Object> readAll_plan_direscuela_aprobado(int idpersona) {
+		return planesDao.readAll_plan_direscuela_aprobado(idpersona);
 	}
 
 	@Override
-	public Map<String, Object> readAll_plan_direscuela_eliminado() {
-		return planesDao.readAll_plan_direscuela_eliminado();
+	public Map<String, Object> readAll_plan_direscuela_eliminado(int idpersona) {
+		return planesDao.readAll_plan_direscuela_eliminado(idpersona);
 	}
 
 	@Override
-	public Map<String, Object> readAll_plan_direscuela_denegado() {
-		return planesDao.readAll_plan_direscuela_denegado();
+	public Map<String, Object> readAll_plan_direscuela_denegado(int idpersona) {
+		return planesDao.readAll_plan_direscuela_denegado(idpersona);
 	}
 	
 	@Override

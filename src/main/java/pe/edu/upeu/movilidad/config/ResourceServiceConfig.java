@@ -70,10 +70,10 @@ public class ResourceServiceConfig extends ResourceServerConfigurerAdapter{
 		.antMatchers(HttpMethod.GET, "/planes/get_docente/{id}").permitAll()
 		.antMatchers(HttpMethod.GET, "/planes/get_plan/{id}").permitAll()
 		.antMatchers(HttpMethod.GET, "/planes/alumno_ganador/{id}").permitAll()
-		.antMatchers(HttpMethod.GET, "/planes/plan_direscuela_espera").permitAll()
-		.antMatchers(HttpMethod.GET, "/planes/plan_direscuela_aprobado").permitAll()
-		.antMatchers(HttpMethod.GET, "/planes/plan_direscuela_eliminado").permitAll()
-		.antMatchers(HttpMethod.GET, "/planes/plan_direscuela_denegado").permitAll()
+		.antMatchers(HttpMethod.GET, "/planes/plan_direscuela_espera/{id}").permitAll()
+		.antMatchers(HttpMethod.GET, "/planes/plan_direscuela_aprobado/{id}").permitAll()
+		.antMatchers(HttpMethod.GET, "/planes/plan_direscuela_eliminado/{id}").permitAll()
+		.antMatchers(HttpMethod.GET, "/planes/plan_direscuela_denegado/{id}").permitAll()
 		.antMatchers(HttpMethod.GET, "/planes/plan_ocni_espera").permitAll()
 		.antMatchers(HttpMethod.GET, "/planes/plan_ocni_aprobado").permitAll()
 		.antMatchers(HttpMethod.GET, "/planes/plan_ocni_denegado").permitAll()
@@ -85,6 +85,21 @@ public class ResourceServiceConfig extends ResourceServerConfigurerAdapter{
 		.antMatchers(HttpMethod.PUT, "/planes/estado_consejo_univ/{id}").permitAll()
 		.antMatchers(HttpMethod.PUT, "/planes/estado_general/{id}").permitAll()
 		.antMatchers(HttpMethod.DELETE, "/planes/eliminar_plan/{id}").permitAll()
+	
+		.antMatchers(HttpMethod.POST, "/constancia_fin/add").permitAll()
+		.antMatchers(HttpMethod.GET, "/constancia_fin/constancia_financiera").permitAll()
+		.antMatchers(HttpMethod.GET, "/constancia_fin/get_facultad").permitAll()
+		.antMatchers(HttpMethod.GET, "/constancia_fin/get_escuela_facultad/{id}").permitAll()
+		.antMatchers(HttpMethod.GET, "/constancia_fin/get_plan_escuela/{id}").permitAll()
+		
+		.antMatchers(HttpMethod.POST, "/tramite/add").permitAll()
+		.antMatchers(HttpMethod.GET, "/tramite/listar").permitAll()
+		
+		.antMatchers(HttpMethod.POST, "/presentacion_alumno/add").permitAll()
+		.antMatchers(HttpMethod.GET, "/presentacion_alumno/listar").permitAll()
+
+
+
 
 		
 		.antMatchers(HttpMethod.GET, "/documentos/convocatoria/{id}").permitAll()
