@@ -29,4 +29,10 @@ public class TramiteDaoImp implements TramiteDao{
 				.declareParameters(new SqlOutParameter("LISTA_TRAMITE", OracleTypes.CURSOR, new ColumnMapRowMapper()));
 		return simpleJdbcCall.execute();
 	}
+
+	@Override
+	public int eliminar_tramite(int id) {
+		return jdbcTemplate.update("call PK_PLANES.SP_ELIMINAR_TRAMITE(?)",id);
+
+	}
 }

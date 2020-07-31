@@ -30,4 +30,10 @@ public class PresentacionAlumnoDaoImp implements PresentacionAlumnoDao{
 		return simpleJdbcCall.execute();
 	}
 
+	@Override
+	public int eliminar_presentacion(int id) {
+		return jdbcTemplate.update("call PK_PLANES.SP_ELIMINAR_PRESENTACION(?)",id);
+
+	}
+
 }

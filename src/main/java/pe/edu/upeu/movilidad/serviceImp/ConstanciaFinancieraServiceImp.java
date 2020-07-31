@@ -39,6 +39,10 @@ public class ConstanciaFinancieraServiceImp implements ConstanciaFinancieraServi
 		return constanciaDao.getPlanEscuela(idescuela);
 	}
 
-	
+	@Override
+	public int eliminar_constancia(int id) {
+		return constanciaDao.eliminar_constancia(id);
+	}
+
 	
 }
