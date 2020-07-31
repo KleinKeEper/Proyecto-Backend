@@ -5,10 +5,13 @@ import java.util.Map;
 import pe.edu.upeu.movilidad.entity.Planes;
 
 public interface PlanesDao {
-	public Map<String, Object> readAll_plan_direscuela_espera();
-	public Map<String, Object> readAll_plan_direscuela_aprobado();
-	public Map<String, Object> readAll_plan_direscuela_eliminado();
-	public Map<String, Object> readAll_plan_direscuela_denegado();
+	public int create(Planes planes);
+	public Map<String, Object> getId_Docente(int idpersona);
+	public Map<String, Object> getId_Plan(int idplan);
+	public Map<String, Object> readAll_plan_direscuela_espera(int idpersona);
+	public Map<String, Object> readAll_plan_direscuela_aprobado(int idpersona);
+	public Map<String, Object> readAll_plan_direscuela_eliminado(int idpersona);
+	public Map<String, Object> readAll_plan_direscuela_denegado(int idpersona);
 	public Map<String, Object> readAll_plan_ocni_espera();
 	public Map<String, Object> readAll_plan_ocni_aprobado();
 	public Map<String, Object> readAll_plan_ocni_denegado();

@@ -102,6 +102,16 @@ public class ConvocatoriaDaoImp implements ConvocatoriaDao {
 		return simpleJdbcCall.execute();
 	}
 
+	@Override
+	public Map<String, Object> getConvocatorias(int idescuela) {
+		// TODO Auto-generated method stub
+		simpleJdbcCall = new SimpleJdbcCall(jdbcTemplate).withFunctionName("fn_list_convocatoria").withCatalogName("pk_adjuntar_documentos");
+		
+		SqlParameterSource  in = new MapSqlParameterSource().addValue("idescuela", idescuela);
+		
+		return simpleJdbcCall.execute(in) ;
+	}
+
 	
 	
 

@@ -14,6 +14,8 @@ public interface ConvocatoriaService {
 	public Map<String, Object> readAll_convo_espera();
 	public Map<String, Object> readAll_convo_aperturada();
 	public Map<String, Object> readAll_convo_no_aperturada();
+	
+	public Map<String, Object> getConvocatorias( int idescuela);
 
 
 }

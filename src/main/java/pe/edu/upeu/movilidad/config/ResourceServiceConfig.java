@@ -25,11 +25,16 @@ public class ResourceServiceConfig extends ResourceServerConfigurerAdapter{
 //		.antMatchers(HttpMethod.GET, "/categoria/list", "/list/{id}").permitAll()
 		.antMatchers(HttpMethod.GET, "/principal/opciones/{username}").permitAll()
 		.antMatchers(HttpMethod.GET, "/principal").permitAll()
+		.antMatchers(HttpMethod.GET, "/principal/now/{idpersona}").permitAll()
+		.antMatchers(HttpMethod.GET, "/principal/filtrar/{idalumno}").permitAll()
+		.antMatchers(HttpMethod.GET, "/principal/name/{idpersona}/{opcion}").permitAll()
+		
 		.antMatchers(HttpMethod.GET, "/vacantes/escuela/{id}").permitAll()
 		.antMatchers(HttpMethod.GET, "/vacantes/universidad").permitAll()
 
 		.antMatchers(HttpMethod.GET, "/vacantes/convocatoria").permitAll()
 		.antMatchers(HttpMethod.GET, "/vacantes/facultad/{id}").permitAll()
+<<<<<<< HEAD
 		.antMatchers(HttpMethod.PUT, "/convocatoria/estado/{id}").permitAll()
 		.antMatchers(HttpMethod.GET, "/convocatoria/espera").permitAll()
 		.antMatchers(HttpMethod.GET, "/convocatoria/aperturada").permitAll()
@@ -45,6 +50,8 @@ public class ResourceServiceConfig extends ResourceServerConfigurerAdapter{
 		
 
 		.antMatchers(HttpMethod.GET,  "/vacantes/convocatoria").permitAll()
+=======
+>>>>>>> da20c00b0404e5b27ad9a31740e8019fbb39df3b
 		.antMatchers(HttpMethod.PUT,  "/vacantes/convocatoria").permitAll()
 		.antMatchers(HttpMethod.POST,  "/vacantes/convocatoria").permitAll()
 		.antMatchers(HttpMethod.GET, "/vacantes/convocatoria/{id}").permitAll()
@@ -52,6 +59,71 @@ public class ResourceServiceConfig extends ResourceServerConfigurerAdapter{
 		.antMatchers(HttpMethod.GET, "/vacantes/universidad/{id}").permitAll()
 		.antMatchers(HttpMethod.GET, "/vacantes/facultad/{id_persona}").permitAll()
 		
+<<<<<<< HEAD
+=======
+		.antMatchers(HttpMethod.PUT, "/convocatoria/estado/{id}").permitAll()
+		.antMatchers(HttpMethod.GET, "/convocatoria/espera").permitAll()
+		.antMatchers(HttpMethod.GET, "/convocatoria/aperturada").permitAll()
+		.antMatchers(HttpMethod.GET, "/convocatoria/desaperturada").permitAll()
+		.antMatchers(HttpMethod.GET, "/convocatoria/estado/{id}").permitAll()
+
+
+		.antMatchers(HttpMethod.GET, "/adjuntar/getid/{id}").permitAll()
+		.antMatchers(HttpMethod.GET, "/adjuntar/getconvocatoria/{idescuela}").permitAll()
+		.antMatchers(HttpMethod.GET, "/adjuntar/getalumno/{idalumno}").permitAll()
+		.antMatchers(HttpMethod.POST, "/adjuntar/create").permitAll()
+		.antMatchers(HttpMethod.GET, "/adjuntar/getpostulaciones/{idalumno}/{idconvocatoria}").permitAll()
+
+		.antMatchers(HttpMethod.POST, "/solicitar/create").permitAll()
+		.antMatchers(HttpMethod.GET, "/solicitar/documentos").permitAll()
+		.antMatchers(HttpMethod.GET, "/solicitar/validar/{idpresentacion}").permitAll()
+		
+		.antMatchers(HttpMethod.GET, "/solicitar/getdocumentos/{idpersona}").permitAll()
+		.antMatchers(HttpMethod.PUT, "/solicitar/update").permitAll()
+		
+		.antMatchers(HttpMethod.GET, "/recepcionar/get/{idpersona}").permitAll()
+		.antMatchers(HttpMethod.GET, "/recepcionar/documento/{idpresentacion}").permitAll()
+		
+		
+		
+		.antMatchers(HttpMethod.POST, "/planes/add").permitAll()
+		.antMatchers(HttpMethod.GET, "/planes/get_docente/{id}").permitAll()
+		.antMatchers(HttpMethod.GET, "/planes/get_plan/{id}").permitAll()
+		.antMatchers(HttpMethod.GET, "/planes/alumno_ganador/{id}").permitAll()
+		.antMatchers(HttpMethod.GET, "/planes/plan_direscuela_espera/{id}").permitAll()
+		.antMatchers(HttpMethod.GET, "/planes/plan_direscuela_aprobado/{id}").permitAll()
+		.antMatchers(HttpMethod.GET, "/planes/plan_direscuela_eliminado/{id}").permitAll()
+		.antMatchers(HttpMethod.GET, "/planes/plan_direscuela_denegado/{id}").permitAll()
+		.antMatchers(HttpMethod.GET, "/planes/plan_ocni_espera").permitAll()
+		.antMatchers(HttpMethod.GET, "/planes/plan_ocni_aprobado").permitAll()
+		.antMatchers(HttpMethod.GET, "/planes/plan_ocni_denegado").permitAll()
+		.antMatchers(HttpMethod.GET, "/planes/plan_consejo_espera").permitAll()
+		.antMatchers(HttpMethod.GET, "/planes/plan_consejo_aprobado").permitAll()
+		.antMatchers(HttpMethod.GET, "/planes/plan_consejo_denegado").permitAll()
+		.antMatchers(HttpMethod.PUT, "/planes/estado_decano/{id}").permitAll()
+		.antMatchers(HttpMethod.PUT, "/planes/estado_ocni/{id}").permitAll()
+		.antMatchers(HttpMethod.PUT, "/planes/estado_consejo_univ/{id}").permitAll()
+		.antMatchers(HttpMethod.PUT, "/planes/estado_general/{id}").permitAll()
+		.antMatchers(HttpMethod.DELETE, "/planes/eliminar_plan/{id}").permitAll()
+	
+		.antMatchers(HttpMethod.POST, "/constancia_fin/add").permitAll()
+		.antMatchers(HttpMethod.GET, "/constancia_fin/constancia_financiera").permitAll()
+		.antMatchers(HttpMethod.GET, "/constancia_fin/get_facultad").permitAll()
+		.antMatchers(HttpMethod.GET, "/constancia_fin/get_escuela_facultad/{id}").permitAll()
+		.antMatchers(HttpMethod.GET, "/constancia_fin/get_plan_escuela/{id}").permitAll()
+		
+		.antMatchers(HttpMethod.POST, "/tramite/add").permitAll()
+		.antMatchers(HttpMethod.GET, "/tramite/listar").permitAll()
+		
+		.antMatchers(HttpMethod.POST, "/presentacion_alumno/add").permitAll()
+		.antMatchers(HttpMethod.GET, "/presentacion_alumno/listar").permitAll()
+
+
+
+
+		
+		.antMatchers(HttpMethod.GET, "/documentos/convocatoria/{id}").permitAll()
+>>>>>>> da20c00b0404e5b27ad9a31740e8019fbb39df3b
 		.anyRequest().authenticated()
 		.and().cors().configurationSource(corsConfigurationSource());
 	}

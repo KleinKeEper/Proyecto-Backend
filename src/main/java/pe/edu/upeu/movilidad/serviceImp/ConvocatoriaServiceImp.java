@@ -70,5 +70,13 @@ public class ConvocatoriaServiceImp implements ConvocatoriaService {
 		return convocatoriaDao.readAll_convo_no_aperturada();
 	}
 
+<<<<<<< HEAD
+=======
+	@Override
+	public Map<String, Object> getConvocatorias(int idescuela) {
+		// TODO Auto-generated method stub
+		return convocatoriaDao.getConvocatorias(idescuela);
+	}
+>>>>>>> da20c00b0404e5b27ad9a31740e8019fbb39df3b
 
 }

@@ -12,25 +12,39 @@ import pe.edu.upeu.movilidad.service.PlanesService;
 public class PlanesServiceImp implements PlanesService{
 	@Autowired
 	private PlanesDao planesDao;
-
+	
 	@Override
-	public Map<String, Object> readAll_plan_direscuela_espera() {
-		return planesDao.readAll_plan_direscuela_espera();
+	public int create(Planes planes) {
+		return planesDao.create(planes);
+	}
+	
+	@Override
+	public Map<String, Object> getId_Docente(int idpersona) {
+		return planesDao.getId_Docente(idpersona);
+	}
+	
+	@Override
+	public Map<String, Object> getId_Plan(int idplan) {
+		return planesDao.getId_Plan(idplan);
+	}
+	@Override
+	public Map<String, Object> readAll_plan_direscuela_espera(int idpersona) {
+		return planesDao.readAll_plan_direscuela_espera(idpersona);
 	}
 
 	@Override
-	public Map<String, Object> readAll_plan_direscuela_aprobado() {
-		return planesDao.readAll_plan_direscuela_aprobado();
+	public Map<String, Object> readAll_plan_direscuela_aprobado(int idpersona) {
+		return planesDao.readAll_plan_direscuela_aprobado(idpersona);
 	}
 
 	@Override
-	public Map<String, Object> readAll_plan_direscuela_eliminado() {
-		return planesDao.readAll_plan_direscuela_eliminado();
+	public Map<String, Object> readAll_plan_direscuela_eliminado(int idpersona) {
+		return planesDao.readAll_plan_direscuela_eliminado(idpersona);
 	}
 
 	@Override
-	public Map<String, Object> readAll_plan_direscuela_denegado() {
-		return planesDao.readAll_plan_direscuela_denegado();
+	public Map<String, Object> readAll_plan_direscuela_denegado(int idpersona) {
+		return planesDao.readAll_plan_direscuela_denegado(idpersona);
 	}
 	
 	@Override
