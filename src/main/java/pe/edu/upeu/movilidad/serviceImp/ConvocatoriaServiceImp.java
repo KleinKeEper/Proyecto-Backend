@@ -16,9 +16,9 @@ public class ConvocatoriaServiceImp implements ConvocatoriaService {
 	private ConvocatoriaDao convocatoriaDao;
 	
 	@Override
-	public Map<String, Object> readAll() {
+	public Map<String, Object> readAll(int idescuela) {
 		// TODO Auto-generated method stub
-		return convocatoriaDao.readAll();
+		return convocatoriaDao.readAll(idescuela);
 	}
 
 	@Override

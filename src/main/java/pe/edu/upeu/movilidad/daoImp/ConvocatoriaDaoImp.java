@@ -20,10 +20,11 @@ public class ConvocatoriaDaoImp implements ConvocatoriaDao {
 	private SimpleJdbcCall simpleJdbcCall;
 	
 	@Override
-	public Map<String, Object> readAll() {
+	public Map<String, Object> readAll(int idescuela) {
 		// TODO Auto-generated method stub
 		simpleJdbcCall = new SimpleJdbcCall(jdbcTemplate).withFunctionName("LIST_CONVOCATORIA").withCatalogName("PK_GENERAR_VACANTES");
-		return simpleJdbcCall.execute();
+		SqlParameterSource in = new MapSqlParameterSource().addValue("idescuela", idescuela);
+		return simpleJdbcCall.execute(in);
 	}
 
 	@Override

@@ -58,9 +58,9 @@ public class GenerarVacantesController {
 		return universidadConvenioService.readId(id);
 	}
 	
-	@GetMapping("/convocatoria")
-	public Map<String, Object> readConvocatoria() {
-		return convocatoriaService.readAll();
+	@GetMapping("/convocatoriagen/{idescuela}")
+	public Map<String, Object> readConvocatoria(@PathVariable int idescuela) {
+		return convocatoriaService.readAll(idescuela);
 	}
 	
 	@GetMapping("/convocatoria/{id}")

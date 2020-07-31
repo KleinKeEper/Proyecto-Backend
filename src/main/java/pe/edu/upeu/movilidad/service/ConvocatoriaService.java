@@ -10,7 +10,7 @@ public interface ConvocatoriaService {
 	public int delete(int id);
 	public int update(Convocatoria c);
 	public Map<String, Object> read(int id);
-	Map<String, Object> readAll();
+	Map<String, Object> readAll(int idescuela);
 	public Map<String, Object> readAll_convo_espera();
 	public Map<String, Object> readAll_convo_aperturada();
 	public Map<String, Object> readAll_convo_no_aperturada();
