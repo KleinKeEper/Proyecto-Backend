@@ -28,6 +28,11 @@ public class PrincipalController {
 	@Autowired
 	private EscuelaService escuelaService;
 	
+	@GetMapping("")
+	public String principal() {
+		return "Hello Fucking World !!";
+	}
+	
 	@GetMapping("/opciones/{username}")
 	public Map<String, Object> read( @PathVariable String username) {
 		return opcionesService.read(username);

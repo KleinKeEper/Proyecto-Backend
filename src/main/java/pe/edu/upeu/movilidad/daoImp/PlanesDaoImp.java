@@ -12,7 +12,6 @@ import org.springframework.jdbc.core.namedparam.MapSqlParameterSource;
 import org.springframework.jdbc.core.namedparam.SqlParameterSource;
 import org.springframework.jdbc.core.simple.SimpleJdbcCall;
 import org.springframework.stereotype.Repository;
-
 import pe.edu.upeu.movilidad.entity.Planes; 
 import oracle.jdbc.internal.OracleTypes;
 import pe.edu.upeu.movilidad.dao.PlanesDao;
