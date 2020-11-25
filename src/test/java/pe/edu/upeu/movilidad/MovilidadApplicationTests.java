@@ -13,17 +13,6 @@ import pe.edu.upeu.movilidad.entity.Usuario;
 @SpringBootTest
 class MovilidadApplicationTests {
 
-	@Autowired
-	UsuarioDao usuarioDao;
-
-	@Autowired
-	EscuelaDao escuelaDao;
-	
-	@Autowired
-	RolDao rolDao;
-	
-	@Autowired
-	OpcionesDao opcionesDao;
 	
 	@Test
 	void contextLoads() {
@@ -33,8 +22,6 @@ class MovilidadApplicationTests {
 //		opcionesDao.read("sera");
 		
 //		escuelaDao.readId(1);
-		Usuario user = usuarioDao.validarUsuario("arlon"); 
-		System.out.println(user.getPassword());
 		
 //		usuarioDao.datosUsuario("arlon");
 //		System.out.println(usuarioDao.datosUsuario("arlon"));
