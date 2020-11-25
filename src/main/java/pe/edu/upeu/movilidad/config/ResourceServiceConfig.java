@@ -62,6 +62,7 @@ public class ResourceServiceConfig extends ResourceServerConfigurerAdapter{
 		.antMatchers(HttpMethod.GET, "/convocatoria/aperturada").permitAll()
 		.antMatchers(HttpMethod.GET, "/convocatoria/desaperturada").permitAll()
 		.antMatchers(HttpMethod.GET, "/convocatoria/estado/{id}").permitAll()
+		.antMatchers(HttpMethod.GET, "/convocatoria/convenios").permitAll()
 
 
 		.antMatchers(HttpMethod.GET, "/adjuntar/getid/{id}").permitAll()
@@ -138,7 +139,7 @@ public class ResourceServiceConfig extends ResourceServerConfigurerAdapter{
 	public CorsConfigurationSource corsConfigurationSource() {
 		
 		CorsConfiguration config = new CorsConfiguration();
-		config.setAllowedOrigins(Arrays.asList("http://localhost:4200"));
+		config.setAllowedOrigins(Arrays.asList("http://localhost:8100"));
 		config.setAllowedMethods(Arrays.asList("GET", "POST", "PUT", "DELETE", "OPTIONS"));
 		config.setAllowCredentials(true);
 		config.setAllowedHeaders(Arrays.asList("Content-Type", "Authorization"));

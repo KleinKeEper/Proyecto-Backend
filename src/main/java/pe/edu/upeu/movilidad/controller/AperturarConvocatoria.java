@@ -40,7 +40,10 @@ public class AperturarConvocatoria {
 	public Map<String, Object> readConvocatoriaNoAperturada() {
 		return convocatoriaService.readAll_convo_no_aperturada();
 	}
-	
+	@GetMapping("/convenios")
+	public Map<String, Object> readAll_convenios() {
+		return convocatoriaService.readAll_convenios();
+	}
 	
 
 }

@@ -113,6 +113,12 @@ public class ConvocatoriaDaoImp implements ConvocatoriaDao {
 		return simpleJdbcCall.execute(in) ;
 	}
 
+	@Override
+	public Map<String, Object> readAll_convenios() {
+		// TODO Auto-generated method stub
+		simpleJdbcCall = new SimpleJdbcCall(jdbcTemplate).withFunctionName("lista_convenios").withCatalogName("pk_convocatoria");
+		return simpleJdbcCall.execute();
+	}
 	
 	
 

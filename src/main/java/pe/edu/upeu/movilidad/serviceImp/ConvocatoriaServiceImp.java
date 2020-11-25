@@ -75,5 +75,9 @@ public class ConvocatoriaServiceImp implements ConvocatoriaService {
 		// TODO Auto-generated method stub
 		return convocatoriaDao.getConvocatorias(idescuela);
 	}
-
+	@Override
+	public Map<String, Object> readAll_convenios() {
+		// TODO Auto-generated method stub
+		return convocatoriaDao.readAll_convenios();
+	}
 }
