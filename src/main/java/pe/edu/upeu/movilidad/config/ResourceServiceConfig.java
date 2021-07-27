@@ -139,7 +139,7 @@ public class ResourceServiceConfig extends ResourceServerConfigurerAdapter{
 	public CorsConfigurationSource corsConfigurationSource() {
 		
 		CorsConfiguration config = new CorsConfiguration();
-		config.setAllowedOrigins(Arrays.asList("http://localhost:8100"));
+		config.setAllowedOrigins(Arrays.asList("http://52.206.120.104"));
 		config.setAllowedMethods(Arrays.asList("GET", "POST", "PUT", "DELETE", "OPTIONS"));
 		config.setAllowCredentials(true);
 		config.setAllowedHeaders(Arrays.asList("Content-Type", "Authorization"));
